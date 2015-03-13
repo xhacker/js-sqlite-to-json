@@ -37,7 +37,7 @@ SqliteToJson.prototype.save = function (table, dest, cb) {
         if (mkdirErr) {
           cb(mkdirErr);
         } else {
-          fs.writeFile(dest, JSON.stringify(tableData), function (writeErr) {
+          fs.writeFile(dest, JSON.stringify(tableData, null, 2), function (writeErr) {
             if (writeErr) {
               cb(writeErr);
             } else {
